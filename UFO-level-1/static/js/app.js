@@ -2,7 +2,6 @@
 var tableData = data;
 
 // YOUR CODE HERE!
-// .datetime
 var button = d3.select(".btn-default");
 var tbody = d3.select("tbody");
 var form = d3.select("form");
@@ -20,7 +19,9 @@ function Add() {
 
 // function formActivate(dataTable) {
 function fillTheTable(dataTable) {
+    // clear the table body
     tbody.html("");
+    //read each line from the dataset and append to the table
     dataTable.forEach((ufodtata) => {
         var row = tbody.append("tr");
         Object.entries(ufodtata).forEach(([key, value]) => {
@@ -29,22 +30,6 @@ function fillTheTable(dataTable) {
         });
     });
 }
-
-// function handleChange() {
-//     var inputElement = d3.select("#datetime");
-
-//     // Get the value property of the input element
-//     var getDate = inputElement.property("value");
-//     console.log(getDate);
-
-//     console.log("-----------------------------------")
-//     var filteredData = tableData.filter(ufodata => ufodata.datetime === getDate);
-//     console.log(filteredData);
-
-//     fillTheTable(filteredData); 
-
-//     console.log("-----------------------------------")
-// }
 
 function formSubmit() {
     d3.event.preventDefault();

@@ -4,7 +4,9 @@ var tableData = data;
 // YOUR CODE HERE!
 var button = d3.select(".btn-default");
 var tbody = d3.select("tbody");
-var form = d3.select("form");
+var form = d3.select("#ufo-form");
+
+console.log(form);
 
 // Display the table data on the html page
 function fillTheTable(dataTable) {
@@ -20,12 +22,17 @@ function fillTheTable(dataTable) {
 
 // On form submit, filter the data based on the criteria selection
 function formSubmit() {
+
+    console.log("Enering the function..........")
     d3.event.preventDefault();
     var getDate = d3.select("#datetime").property("value");
-    var  getCity = d3.select("#txt-city").property("value").toLowerCase();
+    var getCity = d3.select("#txt-city").property("value").toLowerCase();
     var getState = d3.select("#txt-state").property("value").toLowerCase();
     var getCountry = d3.select("#txt-country").property("value").toLowerCase();
     var getShape = d3.select("#txt-shape").property("value").toLowerCase();
+    console.log(getDate);
+    console.log(getCity);
+
 
     var filteredData = tableData
     if (getDate) {
@@ -42,12 +49,13 @@ function formSubmit() {
     }
     if (getShape) {
         filteredData = filteredData.filter(ufodata => ufodata.shape === getShape);
-    }
-        
+    }        
     console.log(filteredData);    
     fillTheTable(filteredData);
 }
-
 fillTheTable(tableData);
-button.on("click", formSubmit);
 form.on("submit", formSubmit);
+
+button.on("click", formSubmit);
+// form.on("change", formSubmit);
+

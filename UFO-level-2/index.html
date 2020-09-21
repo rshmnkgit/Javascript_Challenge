@@ -13,7 +13,7 @@
 <body>
   <div class="wrapper">
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">UFO Sightings
             <img class="nav-ufo" src="static/images/ufo.svg">
@@ -32,25 +32,30 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
+                <form id="ufo-form">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <input class="form-control" id="datetime" type="text"
+                          placeholder="1/11/2011">
                         <label for="label-city">Enter City</label>
-                        <input class="form-control" id="txt-city" type="text" placeholder="Benton">
+                        <input class="form-control" id="txt-city" type="text"
+                          placeholder="Benton">
                         <label for="label-state">Enter State</label>
                         <input class="form-control" id="txt-state" type="text" placeholder="AR">
                         <label for="label-country">Enter Country</label>
-                        <input class="form-control" id="txt-country" type="text" placeholder="US">
+                        <input class="form-control" id="txt-country" type="text"
+                          placeholder="US">
                         <label for="label-shape">Enter Shape</label>
-                        <input class="form-control" id="txt-shape" type="text" placeholder="circle">
+                        <input class="form-control" id="txt-shape" type="text"
+                          placeholder="circle">
 
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <!-- <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button> -->
+                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
                 </form>
               </div>
             </div>
